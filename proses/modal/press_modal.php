@@ -48,7 +48,7 @@ $(document).ready(function() {
     $('#tambah').on('show.bs.modal', function(e) {
         $.ajax( // fungsi ajak untuk mengambil data
             {
-                url: 'proses/administrator/tambah_ban.php',
+                url: 'proses/administrator/tambah_press.php',
                 success: function(data) {
                     $('.add-jabatan').html(data); // menampilkan data ke dalam modal
                 }
@@ -58,13 +58,13 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#edit').on('show.bs.modal', function(e) {
-        var id_bantingan = $(e.relatedTarget).data('id');
+        var id_reb = $(e.relatedTarget).data('id');
 
         $.ajax( // fungsi ajak untuk mengambil data
             {
                 type: 'post',
-                url: 'proses/administrator/ubah_ban.php',
-                data: 'id_bantingan=' + id_bantingan,
+                url: 'proses/administrator/ubah_press.php',
+                data: 'id_reb=' + id_reb,
                 success: function(data) {
                     $('.edit-jabatan').html(data); // menampilkan data ke dalam modal
                 }

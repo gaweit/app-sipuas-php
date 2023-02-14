@@ -53,7 +53,7 @@ cekSession();
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Tabel Data Bantingan</h4>
+                                        <h4>Tabel Data Press</h4>
                                     </div>
 
                                     <div class="card-body">
@@ -67,230 +67,382 @@ cekSession();
                                         <div class="table-responsive">
                                             <button class="btn btn-icon btn-info" data-toggle="modal"
                                                 data-target="#tambah">
-                                                <i class="fas fa-plus" aria-hidden="true"></i> Tambah
-                                            </button><br><br>
+                                                <i class="fas fa-plus" aria-hidden="true"></i> Tambah </button><br><br>
                                             <table class="table table-striped table-hover" id="save-stage"
                                                 style="width:100%;">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
-                                                        <th>Tanggal</th>
-                                                        <th>tippler_cap_5ton</th>
-                                                        <th>Sfb Conveyor 01</th>
-                                                        <th>Sfb Conveyor 02</th>
-                                                        <th>Threser 01</th>
-                                                        <th>Threser 02</th>
-                                                        <th>Threser 03</th>
-                                                        <th>Discharge Conveyor 01</th>
-                                                        <th>Discharge Conveyor 02</th>
-                                                        <th>Discharge Conveyor 03</th>
-                                                        <th>Eb Conveyor</th>
-                                                        <th>Keterangan</th>
+                                                        <th>bottom_cross_conveyor</th>
+                                                        <th>fruit_evalator01</th>
+                                                        <th>fruit_evalator02</th>
+                                                        <th>fruit_evalator03</th>
+                                                        <th>top_fdc</th>
+                                                        <th>digester01</th>
+                                                        <th>digester02</th>
+                                                        <th>digester03</th>
+                                                        <th>digester04</th>
+                                                        <th>digester05</th>
+                                                        <th>press01</th>
+                                                        <th>press02</th>
+                                                        <th>press03</th>
+                                                        <th>press04</th>
+                                                        <th>press05</th>
+                                                        <th>sand_trap_tank</th>
+                                                        <th>screen_waste_conveyor01</th>
+                                                        <th>screen_waste_conveyor02</th>
+                                                        <th>keterangan</th>
+                                                        <th>tanggal</th>
                                                         <th>Aksi</th>
 
                                                     </tr>
                                                 </thead>
                                                 <?php
-                                    
-                                                    $query = mysql_query("SELECT * FROM bantingan ORDER BY tgl_ban ASC");
-                                                $no = 1;
+                          
+                          $query = mysql_query("SELECT * FROM press ORDER BY tanggal ASC");
+                          $no = 1;
 
-                                                    while ($data = mysql_fetch_assoc($query)) {?>
+                          while ($data = mysql_fetch_assoc($query)) {?>
                                                 <tbody>
                                                     <tr>
                                                         <td> <?php echo $no++ ?></td>
-                                                        <td> <?php echo $data['tgl_ban']; ?></td>
-                                                        <?php if($data['tippler_cap_5ton'] == "Normal"){ ?>
+                                                        <td> <?php echo $data['tanggal']; ?></td>
+                                                        <?php if($data['bottom_cross_conveyor'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['tippler_cap_5ton'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['bottom_cross_conveyor'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['tippler_cap_5ton'] == "Standby"){ ?>
+                                                        <?php }elseif($data['bottom_cross_conveyor'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['tippler_cap_5ton'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['bottom_cross_conveyor'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['sfb_conveyor01'] == "Normal"){ ?>
+                                                        <?php if($data['fruit_evalator01'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['sfb_conveyor01'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['fruit_evalator01'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['sfb_conveyor01'] == "Standby"){ ?>
+                                                        <?php }elseif($data['fruit_evalator01'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['sfb_conveyor01'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['fruit_evalator01'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['sfb_conveyor02'] == "Normal"){ ?>
+                                                        <?php if($data['fruit_evalator02'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['sfb_conveyor02'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['fruit_evalator02'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['sfb_conveyor02'] == "Standby"){ ?>
+                                                        <?php }elseif($data['fruit_evalator02'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['sfb_conveyor02'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['fruit_evalator02'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['threser01'] == "Normal"){ ?>
+                                                        <?php if($data['fruit_evalator03'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser01'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['fruit_evalator03'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser01'] == "Standby"){ ?>
+                                                        <?php }elseif($data['fruit_evalator03'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser01'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['fruit_evalator03'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['threser02'] == "Normal"){ ?>
+                                                        <?php if($data['top_fdc'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser02'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['top_fdc'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser02'] == "Standby"){ ?>
+                                                        <?php }elseif($data['top_fdc'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser02'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['top_fdc'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['threser03'] == "Normal"){ ?>
+                                                        <?php if($data['digester01'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser03'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['digester01'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser03'] == "Standby"){ ?>
+                                                        <?php }elseif($data['digester01'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['threser03'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['digester01'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['discharge_conveyor01'] == "Normal"){ ?>
+                                                        <?php if($data['digester02'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor01'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['digester02'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor01'] == "Standby"){ ?>
+                                                        <?php }elseif($data['digester02'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor01'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['digester02'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['discharge_conveyor02'] == "Normal"){ ?>
+                                                        <?php if($data['digester03'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor02'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['digester03'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor02'] == "Standby"){ ?>
+                                                        <?php }elseif($data['digester03'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor02'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['digester03'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['discharge_conveyor03'] == "Normal"){ ?>
+                                                        <?php if($data['digester04'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor03'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['digester04'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor03'] == "Standby"){ ?>
+                                                        <?php }elseif($data['digester04'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['discharge_conveyor03'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['digester04'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <?php if($data['eb_conveyor'] == "Normal"){ ?>
+                                                        <?php if($data['digester05'] == "Normal"){ ?>
                                                         <td><button type="button"
                                                                 class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['eb_conveyor'] == "Tidak Normal"){ ?>
+                                                        <?php }elseif($data['digester05'] == "Tidak Normal"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['eb_conveyor'] == "Standby"){ ?>
+                                                        <?php }elseif($data['digester05'] == "Standby"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
-                                                        <?php }elseif($data['eb_conveyor'] == "Rusak"){ ?>
+                                                        <?php }elseif($data['digester05'] == "Rusak"){ ?>
                                                         <td> <button type="button"
                                                                 class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                                         </td>
                                                         <?php } ?>
 
-                                                        <td> <?php echo $data['ket']; ?></td>
+                                                        <?php if($data['press01'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press01'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press01'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press01'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <?php if($data['press02'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press02'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press02'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press02'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <?php if($data['press03'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press03'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press03'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press03'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <?php if($data['press04'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press04'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press04'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press04'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <?php if($data['press05'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press05'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press05'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['press05'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <?php if($data['sand_trap_tank'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['sand_trap_tank'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['sand_trap_tank'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['sand_trap_tank'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <?php if($data['screen_waste_conveyor01'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['screen_waste_conveyor01'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['screen_waste_conveyor01'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['screen_waste_conveyor01'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <?php if($data['screen_waste_conveyor02'] == "Normal"){ ?>
+                                                        <td><button type="button"
+                                                                class="btn btn-icon btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['screen_waste_conveyor02'] == "Tidak Normal"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['screen_waste_conveyor02'] == "Standby"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php }elseif($data['screen_waste_conveyor02'] == "Rusak"){ ?>
+                                                        <td> <button type="button"
+                                                                class="btn btn-icon btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                                        </td>
+                                                        <?php } ?>
+
+                                                        <td> <?php echo $data['keterangan']; ?></td>
+
                                                         <td class="td-actions text-center">
                                                             <a href="#edit" data-toggle="modal"
-                                                                data-id="<?php echo $data['id_ban'];?>"
+                                                                data-id="<?php echo $data['id_press'];?>"
                                                                 data-target="#edit"><button type="button" rel="tooltip"
                                                                     class="btn btn-icon btn-success">
                                                                     <i class="fa fa-edit"> Ubah</i>
                                                                 </button></a>
 
                                                             <a href="#"
-                                                                onclick="confirm_modal('proses/administrator/hapus_ban.php?id=<?php echo $data['id_bantingan'];?>');">
+                                                                onclick="confirm_modal('proses/administrator/hapus_press.php?id=<?php echo $data['id_press'];?>');">
                                                                 <button type="button" rel="tooltip"
                                                                     class="btn btn-icon btn-danger">
                                                                     <i class="fas fa-trash"> Hapus</i>
@@ -453,7 +605,7 @@ cekSession();
 
 <?php 
 
-include("proses/modal/ban.php");
+    include("proses/modal/press_modal.php");
 
-?>
+    ?>
 <?php include ("proses/modal/akun.php");?>

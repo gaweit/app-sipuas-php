@@ -8,11 +8,11 @@ session_start();
 
 
 
-$query=mysql_query("DELETE FROM rebusan_proses WHERE id_reb= '".$_GET['id']."'");
+$query=mysql_query("DELETE FROM bantingan WHERE id_bantingan= '".$_GET['id']."'");
 
  echo "<script> window.alert('Data Berhasil di Hapus');
 
-                            window.location = '../../rebusan.php'; 
+                            window.location = '../../bantingan.php'; 
 
                     </script>";
 
